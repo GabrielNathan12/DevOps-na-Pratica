@@ -53,4 +53,13 @@ node app.js <br><br>
 Com isso teremos nosso arquivo app.js sendo executado dentro do container. Para realmente testar se está funcionando, basta entrar no seguinte link http://127.0.0.1:8080/
 
 ![Screenshot_20230924_171000](https://github.com/GabrielNathan12/DevOps-na-Pratica/assets/76185909/90714fdf-874b-4475-a3fe-b43ea31c37d0)
+<br><br>
 
+- Atividade 3 <br><br>
+  ![Screenshot_20230924_181956](https://github.com/GabrielNathan12/DevOps-na-Pratica/assets/76185909/3583bbde-59ac-474e-b1c6-b2faa4348e3b)
+<br><br>
+![Screenshot_20230924_182029](https://github.com/GabrielNathan12/DevOps-na-Pratica/assets/76185909/d2b5c382-fff3-4000-86da-411824a7f9aa)
+<br><br>
+![Screenshot_20230924_182045](https://github.com/GabrielNathan12/DevOps-na-Pratica/assets/76185909/8cebaf82-22a6-4e4b-b7d9-f653f86c676e)
+<br><br>
+Os demais arquivos do docker-compose.yml, estão na pasta ExercicioPratico1/Atividade3
