@@ -1,25 +1,49 @@
 # DevOps-na-Pratica
 
 ## Exercício Prático 1
-- Atividade 1.
-  Primeiro passo, verificar se o Docker está rodando com o Comando <br>
-  sudo systemctl status docker <br>
-  Se não estiver digitar o seguinte comando para ele stardar. <br>
-  sudo systemctl start docker <br>
-  Com o Docker rodando agora pode fazer o Dowload da imagem do Ubuntu, com o seguinte comando. <br>
-  sudo docker run -it ubuntu <br>
+- Atividade 1. <br>
+  Primeiro passo, verificar se o Docker está rodando com o Comando <br><br>
+  sudo systemctl status docker <br><br>
+  Se não estiver digitar o seguinte comando para ele stardar. <br><br>
+  sudo systemctl start docker <br><br>
+  Com o Docker rodando agora pode fazer o Dowload da imagem do Ubuntu, com o seguinte comando. <br><br>
+  sudo docker run -it ubuntu <br><br>
 
-  Isso fará com que a imagem oficial do Ubuntu seja baixada e assim que acabar voçê irá entrar no terminal do Ubuntu. <br>
-  Dentro do terminal, pode ser executado o seguinte comando. <br>
-  apt update <br>
-  Isso irá fazer uma atualização dos pacotes instalados por padrão no Ubuntu. <br>
-  Feito isso, agora só dar o seguinte comando para instalar o Curl <br>
-  apt install -y curl <br>
-  Esse comando irá fazer a instalação do curl no Ubunto. <br>
-  Para ver se realmente o Curl está instado, basta digitar o seguinte comando. <br>
+  Isso fará com que a imagem oficial do Ubuntu seja baixada e assim que acabar voçê irá entrar no terminal do Ubuntu. <br><br>
+  Dentro do terminal, pode ser executado o seguinte comando. <br><br>
+  apt update <br><br>
+  Isso irá fazer uma atualização dos pacotes instalados por padrão no Ubuntu. <br><br>
+  Feito isso, agora só dar o seguinte comando para instalar o Curl <br><br>
+  apt install -y curl <br><br>
+  Esse comando irá fazer a instalação do curl no Ubunto. <br><br>
+  Para ver se realmente o Curl está instado, basta digitar o seguinte comando. <br><br>
   
-  curl --version <br>
+  curl --version <br><br>
   
   ![Screenshot_20230924_153351](https://github.com/GabrielNathan12/DevOps-na-Pratica/assets/76185909/47d9d949-eb61-40c0-9f24-11d828a5b365)
   
-  
+  <br><br>
+- Atividade 2.<br>
+  Primeiro criar um container com a imagem oficial do node, se por caso não tiver ela irá baixar automaticamente. <br><br>
+  Comando <br>
+  sudo docker run -itd --name gabriel-node node
+  <br><br>
+  Com a imagem oficial do node baixada agora é criar um arquivo javascript e conpialó para dentro do container.No meu caso eu criei um arquivo chamado app.js e ele está dentro da pasta ExercicioPratico1/Atividade2. <br> <br>
+  Não esqueça de inicar um projeto em node para conseguir executar o arquivo. Para criar um projeto em node escreva o seguinte comando. <br><br>
+  npm init <br><br>
+  Agora com o arquivo criado e o container contendo a imagem oficial do node, basta agora copiar o arquivo app.js para dentro do container, para isso navegue até onde seu arquivo está e digite o seguinte comando. <br><br>
+  sudo docker cp app.js gabriel-node:/app.js <br><br>
+  Lembre-se que o nome do meu container é gabriel-node, se por acaso o seu for diferente não esqueça de atualizar. <br><br>
+  Com o arquivo agora copiado, precisamos criar uma imagem a partir desse nosso container e para fazer isso digitamos o seguinte comando. <br><br>
+  sudo docker commit gabriel-node imagem-node <br><br>
+No meu caso eu escolhi o nome da imagem como imagem-node mas pode ser qualquer uma <br><br>
+Agora com a nova imagem, executamos os seguintes comandos. <br><br>
+sudo docker run -itd -p 8080:8080 imagem-node <br><br>
+Isso iŕa instardar nossa imagem e mapeála para a porta 8080 <br><br>
+Agora para executar o arquivo app.js nós precisamos primeiro obter o hash criado da imagem-node para isso nós usamos o comando. <br><br>
+sudo docker ps -a <br><br>
+Isso irá mostrar a listas dos container rodando, e a do meu caso possui um hash igual á 1fa23756437a. <br><br>
+Com o hash obtido agora podemos executar o arquivo app.js dentro do container. <br><br>
+Os comandos são, sudo docker exec -itd 1fa23756437a  /bin/bash <br><br>
+node app.js <br><br>
+Com isso teremos nosso arquivo app.js sendo executado dentro do container. Para realmente testar se está funcionando, basta entrar no seguinte link http://127.0.0.1:8080/
