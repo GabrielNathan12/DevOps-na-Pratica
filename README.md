@@ -42,8 +42,15 @@ sudo docker run -itd -p 8080:8080 imagem-node <br><br>
 Isso iŕa instardar nossa imagem e mapeála para a porta 8080 <br><br>
 Agora para executar o arquivo app.js nós precisamos primeiro obter o hash criado da imagem-node para isso nós usamos o comando. <br><br>
 sudo docker ps -a <br><br>
+![Screenshot_20230924_162834](https://github.com/GabrielNathan12/DevOps-na-Pratica/assets/76185909/4acc6bf8-c8ec-4b82-816a-8b5a5fbd103a)
+<br><br>
 Isso irá mostrar a listas dos container rodando, e a do meu caso possui um hash igual á 1fa23756437a. <br><br>
 Com o hash obtido agora podemos executar o arquivo app.js dentro do container. <br><br>
 Os comandos são, sudo docker exec -itd 1fa23756437a  /bin/bash <br><br>
 node app.js <br><br>
+![Screenshot_20230924_170941](https://github.com/GabrielNathan12/DevOps-na-Pratica/assets/76185909/dbf1394e-54af-4ff3-a257-c4e34e18effb)
+<br><br>
 Com isso teremos nosso arquivo app.js sendo executado dentro do container. Para realmente testar se está funcionando, basta entrar no seguinte link http://127.0.0.1:8080/
+
+![Screenshot_20230924_171000](https://github.com/GabrielNathan12/DevOps-na-Pratica/assets/76185909/90714fdf-874b-4475-a3fe-b43ea31c37d0)
+
