@@ -63,3 +63,20 @@ Com isso teremos nosso arquivo app.js sendo executado dentro do container. Para 
 ![Screenshot_20230924_182045](https://github.com/GabrielNathan12/DevOps-na-Pratica/assets/76185909/8cebaf82-22a6-4e4b-b7d9-f653f86c676e)
 <br><br>
 Os demais arquivos do docker-compose.yml, estão na pasta ExercicioPratico1/Atividade3
+<br><br>
+
+## Exercício Prático 2 <br>
+O exercício prático 2, pede uma simples API to-do-list com apenas um CRUD que por sua vez só terá as requiisições GET e POST. O banco de dados solicitado foi o Postgres, com apenas uma tabela com os campos id, descricao e data_criaca, é necessário usar o docker-compose.yml e o Dockerfile, os demais arquivos estão no repositório ExercicioPratico2. <br><br>
+Para executar navegue até o repositório aonde se encontra o docker-composer.yml e dê o seguinte comando. <br><br>
+sudo docker-compose up -d <br><br>
+Isso levantará a rede de container, lembrando que as configurações do banco deve estar de acordo com o seu banco.<br><br>
+Depois para ver se foi levantado os container digite o seguinte comando <br><br>
+sudo docker-compose ps <br><br>
+Se deu certo, mostrará os containers levantado e rodando, depois disso navegue até o diretório app e de o seguinte comando. <br><br>
+npm i <br> <br>
+Isso instalará as depedências do node para essa API, logo após, dê o seguinte comando. <br><br>
+node index.js <br><br>
+Inicializará o servido, e vai estar rodando na página http://localhost:3000/tarefas <br> <br>
+![Screenshot_20230924_201958](https://github.com/GabrielNathan12/DevOps-na-Pratica/assets/76185909/8c5a9747-166f-4157-8572-e9ee0a030897)
+
+
