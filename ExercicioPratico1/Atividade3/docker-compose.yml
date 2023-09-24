@@ -1,0 +1,34 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: databse
+    ports:
+      - "5432:5432"
+    networks:
+      - rede-gabriel
+
+  nodeapp:
+    build: ./nodeapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    networks:
+      - rede-gabriel
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@postgres/databse
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - nodeapp
+    networks:
+      - rede-gabriel
+
+networks:
+  rede-gabriel:
