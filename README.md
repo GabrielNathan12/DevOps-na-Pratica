@@ -20,8 +20,6 @@
   
   curl --version <br>
   
-  
-  
-  
+  ![Screenshot_20230924_153351](https://github.com/GabrielNathan12/DevOps-na-Pratica/assets/76185909/47d9d949-eb61-40c0-9f24-11d828a5b365)
   
   
