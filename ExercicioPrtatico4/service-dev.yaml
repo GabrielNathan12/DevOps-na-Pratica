@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    labels:
+      kubernetes.io/cluster-service: "true"
+      kubernetes.io/name: CoreDNS
+    name: myservice
+    namespace: dev
+spec:
+  selector:
+    app: appdev
+  ports:
+  - port: 8080
+    targetPort: 80
+  type: ClusterIP

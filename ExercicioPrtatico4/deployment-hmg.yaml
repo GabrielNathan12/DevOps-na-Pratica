@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeploymenthmg
+  namespace: hmg
+spec:
+  selector:
+    matchLabels:
+      app: mydeploymenthmg
+  template:
+    metadata:
+      labels:
+        app: mydeploymenthmg
+    spec:
+      containers:
+      - name: mydeploymenthmg
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
